@@ -1,0 +1,40 @@
+Quiz on Classification in R
+##################################
+For the last questions in this quiz you will need to download the R-script PatientReadmission.R from Canvas.  That R-script will download the required data from dropbox.  You can also get the data from Canvas, too.
+You can answer the first 6 questions without the R script or using R
+##################################
+Q1:  The method in "WrongPartition" is more suitable for separating these datasets into test and training datasets:
+##################################
+Q2:  The method in "FastPartition" is more suitable for separating these datasets into test and training datasets:
+##################################
+Q3:  The method in "ExactPartition" is more suitable for separating these datasets into test and training datasets:
+##################################
+Q4:  What is d2?  The following lines of code create a logistic regression, a random forest, and a decision tree.  Each of these are a classification model.
+Model.GLM <- glm(formula, data=d2, family="binomial")
+Model.RF <- randomForest(formula=formulaClass, data=d2)
+Model.DT <- rpart(formula=formulaClass, data=d2)
+For the above code, d2 should be:
+##################################
+# Q5:  What is d1? The following lines of code create probabilities from three different models.  These probabilities will be used to test the accuracy of their respectives models.  
+prob.GLM <- predict(Model.GLM, newdata=d1, type="raw")
+prob.RF <- predict(Model.RF, newdata=d1, type="prob")[,2]
+prob.DT <- predict(Model.DT, newdata=d1, type="prob")[,2]
+For the above code, d1 should be:
+##################################
+Q6:  What is d3? The following lines of code create probabilities from three different models.  These probabilities are predictions that will help a charge nurse decide if a patient is at risk of Readmission.  
+prob.GLM <- predict(Model.GLM, newdata=d3, type="raw")
+prob.RF <- predict(Model.RF, newdata=d3, type="prob")[,2]
+prob.DT <- predict(Model.DT, newdata=d3, type="prob")[,2]
+For the above code, d3 should be:
+##################################
+Q7:  What is the accuracy of the descision tree model at a probability threshold of 0.6?
+Use the settings in PatientReadmission.R.   Use the method that we used in last week's lecture and in the homework.  Express the accuracy as a value between 0 and 1, using 3 decimals, like 0.123. 
+##################################
+Q8: What is the accuracy of the logistic regression model at a probability threshold of 0.5?
+Use the settings in PatientReadmission.R.   Use the method that we used in last week's lecture and in the homework.  Express the accuracy as a value between 0 and 1, using 3 decimals, like 0.123.    
+##################################
+https://www.dropbox.com/s/72sldg5t0jssprx/PatientReadmission.csv?dl=0
+##################################
+
+
+

@@ -1,0 +1,27 @@
+############################################
+Quiz 08b Hadoop
+############################################
+SQL-like language for Hive that uses MapReduce : HiveQL
+############################################
+Transfers data between Hadoop and a relation database. : Sqoop
+############################################
+Machine learning algorithms for Hadoop : Mahout
+############################################
+How many blocks will be created for a file that is 270 Mb. The default block size is 32 Mb and the replication factor is 2 : 18
+############################################
+The namenode distinguishes between a "dead" datanode and a network failure that prevents communiction by: HEARTBEAT
+############################################
+The namenode died in a cluster that contained the namenode, a secondary namenode and 30 datanodes.  As a consequence: Everything shuts down.
+############################################
+Hadoop is based on these two papers: The Google File System & MapReduce
+############################################
+What does the JobTracker do? Manages task trackers and MapReduce for a cluster.
+############################################
+What does the TaskTracker do? Manages MapReduce for a DataNode.
+############################################
+What does the NameNode do? Manages HDFS.
+############################################
+
+
+
+

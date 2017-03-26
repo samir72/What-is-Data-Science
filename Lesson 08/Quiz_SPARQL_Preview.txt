@@ -1,0 +1,79 @@
+#########################################
+What did Tim Berners-Lee invent?
+#########################################
+What did Ted Codd invent?
+#########################################
+What does the following SPARQL statement do?
+
+SELECT (COUNT(*) AS ?x)
+FROM <http://dbpedia.org>
+WHERE
+{?s ?p ?o}
+	Determines the number from the addition: subjects + objects + praedicates in dbpedia
+	Determines the number of graphs in dbpedia
+	Determines the number of triples in dbpedia
+	Determines the number of nodes in dbpedia
+#########################################
+You have the following triplestore <http://ImaginaryTripleStore.com>:
+A X B
+C X B
+B X D
+B Y E
+F Y B
+F X D
+F Y E
+E X D
+G X E
+
+You have the following SPARQL statement:
+SELECT ?s
+FROM <http://ImaginaryTripleStore.com>
+WHERE
+{?s Y ?o .
+?o X D}
+
+What is the query result?
+#########################################
+You have the following triplestore <http://ImaginaryTripleStore.com>:
+A X B
+C X B
+B X D
+B Y E
+F Y B
+F X D
+F Y E
+E X D
+G X E
+
+You have the following SPARQL statement:
+SELECT ?o
+FROM <http://ImaginaryTripleStore.com>
+WHERE
+{?s X ?o .
+B Y ?s}
+
+What is the query result?
+#########################################
+You have the following triplestore <http://ImaginaryTripleStore.com>:
+A X D
+B X D
+D X A
+D X F
+E X D
+F X B
+F X D
+A Y F
+B Y A
+C Y D
+E Y D
+F Y C
+
+You have the following SPARQL statement:
+SELECT ?s
+FROM <http://ImaginaryTripleStore.com>
+WHERE
+{?s Y ?o .
+?o X D}
+
+What is the query result?
+#########################################

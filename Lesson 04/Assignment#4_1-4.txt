@@ -1,0 +1,31 @@
+1.Training vs Test Data
+a)In general, for any modeling data, why are accuracy measures better on training data than on test data?
+Answer : Expertly labelled data is used to train the model, this is data which has been primarly used to create the model so it would be logical to have higher accuracy measures on this data. A very high accuracy might not to be a good idea as this could lead to 'Overfitting'.
+b)Given modeling data, how do you determine which of this data will become training data and which data will become test data?
+Answer : Paritioning should be always random to divide the data between training and test data sets.
+c)You have two datasets. You used one to train the model and the other to test the model. You lost the test results and forgot which one you used for training or testing. How can you determine which of these datasets is the testing data?
+Answer : I would rerun the predictions on both training and test data and check the accuracy results.Test data will have a lower accuracy rate than training data.
+
+2.Beware, this problem contains irrelevant data while some important numbers are not explicitly presented. A model was trained on 300 individuals where 149 had the cold and 151 were healthy. The model was tested on 100 individuals where 10 were actually ill. The model correctly predicted that 85 of the healthy individuals were indeed healthy and correctly predicted that 7 of the ill individuals were indeed ill. The other predictions were incorrect. Consult Wikipedia: http://en.wikipedia.org/wiki/Precision_and_recall. Present the confusion matrix and the following:
+a)Sensitivity :  0.9444444
+b)Specificity :  0.7
+c)Accuracy :  0.92
+d)Precision :  0.9659091
+e)Recall :  0.9444444
+
+3.The probability threshold for a classification varies in an ROC chart from 0 to 1.
+a)What point of the graph corresponds to a threshold of zero?
+Answer : Bottom left hand corener
+b)What point of the graph corresponds to a threshold of one?
+Answer : Top right hand corner
+c)What point of the graph corresponds to a threshold of 0.5? (trick question)
+Answer : You cannot guess the point with just the threshold of 0.5
+
+4.A Classification is tested on 1000 cases. In the approximate middle of its ROC chart there is a point where the false positive rate is 0.4, the true positive rate is 0.8, and the accuracy is 0.7.
+a)What does the confusion matrix look like?
+Confusion Matrix
+     [,1] [,2]
+[1,]  400  200
+[2,]  100  300
+b)What can you say about the probability thr4eshold at that point? (trick question)
+Answer : You cannot guess the threshold by looking at the chart.

@@ -1,0 +1,16 @@
+The most important thing in my mind when I start to approach a solution to a problem.
+As a data scientist in training one question always runs in my mind when I start to analyze a problem. 
+What algorithm should I pick to get the best model in the most cost effective and efficient way ?
+
+This notion of being cost effective and efficient has been drilled into our brains as application developers from the day we started to do software development. 
+All responsible developers prefer to develop a cost effective solution with least amount of defects as defects translate to loss in productivity which in turn makes a solution costly.
+Efficiency plays an equally important role as a slow application again translates into loss of productivity.
+
+Data science however is a different beast due to the numerous unknowns and the only way to know if you have the best model is by testing multiple algorithms against multiple training data sets. This however can be a big challenge for the newcomers in this very exciting and challenging field.
+
+I have come across a very informational post which tends to point us in the right direction, here in the author tends to explain things at a very granular level and to make things even more interesting he has also provided a cheat sheet which in my opinion is a gold nugget for an aspiring data scientist.
+
+Link to the cheat sheet : https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-algorithm-cheat-sheet
+
+https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-algorithm-choice
+

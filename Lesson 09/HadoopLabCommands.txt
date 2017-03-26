@@ -1,0 +1,75 @@
+
+
+HDFS Lab
+$ hadoop fs -ls /
+$ hadoop fs -ls /user
+$ hadoop fs -ls /user/doesnotexist
+$ hadoop fs -ls /user/training
+$ cd ~/training_materials/developer/data
+$ ls
+$ tar zxvf shakespeare.tar.gz
+$ ls
+$ hadoop fs -put shakespeare /user/training/shakespeare
+$ hadoop fs -ls /user/training
+$ hadoop fs -ls /user/training/shakespeare
+$ hadoop fs -cat shakespeare/histories | tail -n 20
+$ ls
+$ hadoop fs -get shakespeare/poems ~/shakepoems.txt
+$ ls
+
+SQOOP Lab
+$ sqoop help
+$ sqoop list-databases --connect jdbc:mysql://localhost --username training --password training
+$ sqoop list-tables --connect jdbc:mysql://localhost/movielens --username training --password training
+$ sqoop import --connect jdbc:mysql://localhost/movielens --username training --password training --fields-terminated-by '\t' --table movie
+$ hadoop fs -ls movie
+$ hadoop fs -tail movie/part-m-00000
+$ sqoop import --connect jdbc:mysql://localhost/movielens --username training --password training --fields-terminated-by '\t' --table movierating
+$ hadoop fs -ls movierating
+$ hadoop fs -tail movierating/part-m-00000
+hadoop fs -cat movie/part-m-00000 | head
+$ hadoop fs -cat movierating/part-m-00000 | head
+
+HIVE Lab
+$ hive
+Tell Hive that the HDFS files, movie and movierating, are tables:
+hive> CREATE EXTERNAL TABLE movie (id INT, name STRING, year INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/training/movie';
+hive> CREATE EXTERNAL TABLE movierating (userid INT, movieid INT, rating INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/training/movierating';
+Ask Hive to show tables and provide metadata on these tables
+hive> SHOW TABLES;
+hive> DESCRIBE movie;
+hive> DESCRIBE movierating;
+Use Hive to find information from your tables
+hive> SELECT * FROM movie WHERE year < 1925;
+hive> SELECT * FROM movie WHERE year < 1925 AND year != 0 ORDER BY name;
+hive> SELECT * FROM movierating WHERE userid=149;
+hive> CREATE TABLE USERRATING (userid INT, numratings INT, avgrating FLOAT);
+hive> insert overwrite table userrating SELECT userid,COUNT(userid),AVG(rating) FROM movierating GROUP BY userid;
+hive> SELECT AVG(rating) FROM movierating WHERE userid=149;
+hive> SELECT userid, COUNT(userid),AVG(rating) FROM movierating where userid < 10 GROUP BY userid;
+Query with Join
+hive> select movieid,rating,name from movierating join movie on movierating.movieid=movie.id where userid=149;
+hive> QUIT;
+$ hive
+hive> CREATE TABLE MovieRated (MovieID INT, NumRatings INT, AvgRating FLOAT); 
+hive> insert overwrite table MovieRated SELECT movieid,COUNT(movieid),AVG(rating) FROM movierating GROUP BY movieid; 
+hive> SELECT COUNT(*) FROM MovieRated; 
+hive> SELECT * FROM MovieRated WHERE AvgRating > 4.4 and NumRatings > 1000; 
+hive> select name, NumRatings , AvgRating from MovieRated join movie on MovieRated.movieid=movie.id where AvgRating > 4.4 and NumRatings > 500 ORDER BY AvgRating; 
+hive> QUIT; 
+
+MapReduce Lab
+cd ~/workspace/wordcount/src
+ls
+ls solution
+hadoop classpath
+javac -classpath `hadoop classpath` solution/*.java
+jar cvf wordcount.jar solution/*.class
+hadoop jar wordcount.jar solution.WordCount shakespeare wordcounts
+hadoop fs -ls wordcounts
+hadoop fs -cat wordcounts/part-r-00000 | less
+hadoop jar wordcount.jar solution.WordCount shakespeare/poems pwords
+hadoop fs -rm -r wordcounts pwords
+hadoop jar wordcount.jar solution.WordCount shakespeare wordcounts
+hadoop fs -cat wordcounts/part-r-00000 | less
+ctrl+z

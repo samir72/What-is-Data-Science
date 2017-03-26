@@ -1,0 +1,75 @@
+#########################################
+What is the order of a trivial graph?
+You can get the definition of graph order from the slide deck or http://en.wikipedia.org/wiki/Graph_%28mathematics%29
+#########################################
+What is the size of a trivial graph?
+You can get the definition of graph size from the slide deck or http://en.wikipedia.org/wiki/Graph_%28mathematics%29
+#########################################
+Below is a graph described by a list of edges.  What is the order of the graph?  
+You can get the definition of graph order from the slide deck or http://en.wikipedia.org/wiki/Graph_%28mathematics%29
+
+List of Edges:
+From	To
+A	B
+C	B
+B	D
+D	A
+D	B
+D	C
+#########################################
+Below is a graph described by a list of edges.  What is the size of the graph?  
+You can get the definition of graph size from the slide deck or http://en.wikipedia.org/wiki/Graph_%28mathematics%29
+
+List of Edges:
+From	To
+A	B
+C	B
+B	D
+D	A
+D	B
+D	C
+#########################################
+Below is a graph described by a list of edges.  What is the outdegree (gregariousness) of node C?  You can get the definition of greariousness from the slide deck or http://en.wikipedia.org/wiki/Centrality
+
+List of Edges:
+From	To
+A	B
+C	B
+B	D
+D	A
+D	B
+D	C
+#########################################
+Below is a graph described by a list of edges.  What is the diameter of the graph?  You can get the definition of graph size from the slide deck or http://en.wikipedia.org/wiki/Distance_%28graph_theory%29
+
+List of Edges:
+From	To
+A	B
+C	B
+B	D
+D	A
+D	B
+D	C
+#########################################
+Below is a nested table.  ID is short for transaction ID.
+List all associations that occur twice!
+
+ID	Item Set
+1	(A, B, C)
+2	(B, C)
+3	(A, C)
+4	(B, D)
+5	(B, D)
+#########################################
+Below is a graph described by a list of edges.  Is the graph trivial, weakly connected, connected, strongly connected?  
+You can get the definition of connectedness from the slide deck or http://en.wikipedia.org/wiki/Graph_%28mathematics%29
+
+List of Edges:
+From	To
+A	B
+C	B
+B	D
+D	A
+D	B
+D	C
+#########################################

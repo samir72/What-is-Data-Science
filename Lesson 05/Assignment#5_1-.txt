@@ -1,0 +1,32 @@
+1.{a, b, c} is a relation that contains the tuples a, b, and c. In the following cases the tuples have arity of 1. Calculate the following:
+a.({1, 2, 3} u {5, 7, 11}) n {2, 4, 6, 8, 10}
+Answer : 2
+b.({1, 2, 3} n {2, 4, 6, 8, 10}) U ({5, 7, 11} n {2, 4, 6, 8, 10})
+Answer : 2
+
+2.A relation exists with 4 columns, named Column1, Column2, Column3, and Column4. Column1 is of type text. Column2, Column3, and Column4 are of type int:
+a.Use relational algebra to fulfill the intent of the following SQL.
+•SELECT Column1, Column3 FROM MyTable WHERE Column2 = Column3
+b.Reverse the order of projection and selection in your algebraic formulation from item 2a. What is the result of the new algebraic expression?
+3.pc1, c2(s?1(s?2(pc1, c2, c3, c5(R))))
+Where
+•?1: C1 = C5;
+•?2: C5 = “Test”;
+•R: MyTable;
+a.Write a SQL statement that declares the intent of the algebraic notation
+b.Simplify the algebraic statement. Simplification means minimize the number of parentheses and terms.
+125
+Assignment (2)
+4.SELECT * FROM T1 JOIN T2 ON T1.C1 = T2.C1
+a.Write out an equivalent in relational algebra using the join operator
+b.Write out an equivalent in relational algebra without using the join operator
+5.pS.C1, R.C2(s?1(R) ??2 S)
+where
+•?1 = (R.C2 = ‘A’)
+•?2 = (R.C1 = S.C2)
+•Write out equivalent SQL and test this SQL using relations R and S that you create for this example. The relations R and S in RelationalAlgebraAndSQL.pdf and RelationalAlgebraAndSQL.sql don’t quite work because their column types do not match for this assignment.
+6.Write a function in R that uses sqldf package to create a full outer join. The function is called OuterJoin and the function declaration is: OuterJoin <- function(tableA, tableB, keyA, keyB). tableA and tableB are data frames that will be joined. keyA and keyB are of type character and contain the names of the column that you join on. The function returns a data frame that is the outer join of the two input data frames. The SQL statement in sqldf is available on the web. In order to point out the difference between tables and sets, do not use the UNION keyword from sqldf, instead use rbind from {base}. rbind, by itself, doesn’t do exactly what UNION does and you may need more code.
+126
+Assignment (3)
+7.Install and setup the Hadoop VM according to SetupVirtualMachine.pdf. Make sure that you get results similar to those shown in SetupVirtualMachine.pdf. If you completed this item last week, then you do not need to do it again. Otherwise, submit the requested screenshot to Canvas.
+8.Submit answers to items 1 through 6 in a txt, doc/docx, or sql file. I will need to copy and paste the SQL statements. Submit the screen shot from item 7, if you didn’t do it last week. Submission due date is Saturday 11:57 PM.
